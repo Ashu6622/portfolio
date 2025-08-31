@@ -3,6 +3,8 @@ import '../styles/Skills.css';
 
 const Skills = () => {
   const skills = [
+    {name: 'C++', icon: '💻'},
+     { name: 'DSA', icon: '🧮' },
     { name: 'HTML', icon: '🌐' },
     { name: 'CSS', icon: '🎨' },
     { name: 'JavaScript', icon: '⚡' },
@@ -14,13 +16,14 @@ const Skills = () => {
     { name: 'MongoDB', icon: '🍃' },
     { name: 'MySQL', icon: '🐬' },
     { name: 'PostgreSQL', icon: '🐘' },
+      { name: 'Firebase', icon: '🔥' },
     { name: 'Prisma', icon: '🔷' },
     { name: 'SQL', icon: '📊' },
-    { name: 'DSA', icon: '🧮' },
+   
     { name: 'Redis', icon: '📦' },
     { name: 'Redux', icon: '🔄' },
     { name: 'Shadcn UI', icon: '🎯' },
-    { name: 'Firebase', icon: '🔥' },
+  
     { name: 'GitHub', icon: '🐙' },
     { name: 'Git', icon: '📝' }
   ];
