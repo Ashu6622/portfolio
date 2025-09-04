@@ -5,8 +5,18 @@ const Hero = () => {
   return (
     <section className="hero" id="home">
       <div className="hero-background">
+        <div className="animated-bg">
+          <div className="gradient-orb orb-1"></div>
+          <div className="gradient-orb orb-2"></div>
+          <div className="gradient-orb orb-3"></div>
+        </div>
+        <div className="geometric-shapes">
+          <div className="shape shape-1"></div>
+          <div className="shape shape-2"></div>
+          <div className="shape shape-3"></div>
+        </div>
         <div className="particles">
-          {[...Array(50)].map((_, i) => (
+          {[...Array(80)].map((_, i) => (
             <div key={i} className="particle"></div>
           ))}
         </div>
@@ -15,12 +25,17 @@ const Hero = () => {
       <div className="hero-content">
         <div className="hero-text">
           <h1 className="hero-title">
-            <span className="text-gradient">Full-Stack Developer</span>
+            <span className="text-gradient">Ashutosh Roy</span>
           </h1>
+          <h2 className="hero-name">
+            <span className="text-gradient">Full-Stack Developer</span>
+          </h2>
           <h2 className="hero-subtitle">Building Digital Experiences</h2>
           <p className="hero-description">
-            Passionate about creating scalable web applications with modern technologies. 
-            I transform ideas into powerful, user-friendly digital solutions.
+             Aspiring Software Developer with strong expertise in Full Stack Development, REST API design, and Data Structures &
+ Algorithms (1000+ problems solved). Proficient in React.js, Node.js, Express.js, MongoDB, SQL, and Firebase, with
+ proven experience building scalable, secure, and user-friendly applications. Passionate about problem-solving,
+ optimizing performance, and delivering high-quality solutions. 
           </p>
           
           <div className="hero-buttons">
