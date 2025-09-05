@@ -53,7 +53,7 @@ const Hero = () => {
             <div className="card-content">
               <div className="code-lines">
                 <div className="line">const developer = &lbrace;</div>
-                <div className="line">  name: 'Your Name',</div>
+                <div className="line">  name: Ashutosh Roy</div>
                 <div className="line">  skills: ['React', 'Node.js'],</div>
                 <div className="line">  passion: 'Building amazing apps'</div>
                 <div className="line">&rbrace;;</div>
