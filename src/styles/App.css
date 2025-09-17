@@ -6,6 +6,11 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -105,4 +110,14 @@ body::-webkit-scrollbar {
   .section-subtitle {
     font-size: 0.9rem;
   }
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 1.2rem;
+  color: #667eea;
+  background: transparent;
 }

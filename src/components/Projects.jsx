@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -7,6 +7,9 @@ import 'swiper/css/pagination';
 import '../styles/Projects.css';
 
 const Projects = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const projectsRef = useRef(null);
+  
   const placeholderProjects = [
     {
       id: 1,
@@ -51,6 +54,26 @@ const Projects = () => {
    
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (projectsRef.current) {
+      observer.observe(projectsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="projects" id="projects">
       <div className="container">
@@ -61,26 +84,27 @@ const Projects = () => {
           </p>
         </div>
         
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={30}
-          slidesPerView={1}
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          breakpoints={{
-            768: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-          }}
-          className="projects-carousel"
-        >
+        <div ref={projectsRef}>
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true }}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}
+            className={`projects-carousel ${isVisible ? 'visible' : ''}`}
+          >
           {placeholderProjects.map((project) => (
             <SwiperSlide key={project.id}>
               <div className="project-card">
@@ -105,7 +129,8 @@ const Projects = () => {
               </div>
             </SwiperSlide>
           ))}
-        </Swiper>
+          </Swiper>
+        </div>
       </div>
     </section>
   );

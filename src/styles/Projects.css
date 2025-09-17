@@ -21,6 +21,14 @@
   position: relative;
   z-index: 2;
   padding: 0 20px 60px 20px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.projects-carousel.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .projects-carousel .swiper-slide {

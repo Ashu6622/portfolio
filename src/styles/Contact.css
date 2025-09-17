@@ -36,11 +36,13 @@
 }
 
 .contact-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   position: relative;
   z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .contact-card, .resume-card {
@@ -49,11 +51,18 @@
   border: 1px solid rgba(102, 126, 234, 0.3);
   border-radius: 20px;
   padding: 40px;
-  animation: fadeInUp 0.8s ease-out both;
+  opacity: 0;
+  transform: translateX(-50px) rotateY(90deg);
+  transition: all 0.8s ease;
+}
+
+.contact-card.visible, .resume-card.visible {
+  opacity: 1;
+  transform: translateX(0) rotateY(0deg);
 }
 
 .resume-card {
-  animation-delay: 0.2s;
+  transform: translateX(50px) rotateY(-90deg);
 }
 
 .contact-card h3, .resume-card h3 {

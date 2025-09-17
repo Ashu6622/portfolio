@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../styles/Skills.css';
 
 const Skills = () => {
+  const [visibleSkills, setVisibleSkills] = useState([]);
+  const skillsRef = useRef(null);
+  
   const skills = [
     {name: 'C++', icon: '💻'},
      { name: 'DSA', icon: '🧮' },
@@ -28,6 +31,31 @@ const Skills = () => {
     { name: 'Git', icon: '📝' }
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Animate skills one by one
+            skills.forEach((_, index) => {
+              setTimeout(() => {
+                setVisibleSkills(prev => [...prev, index]);
+              }, index * 150);
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (skillsRef.current) {
+      observer.observe(skillsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="skills" id="skills">
       <div className="container">
@@ -38,12 +66,11 @@ const Skills = () => {
           </p>
         </div>
         
-        <div className="skills-grid">
+        <div className="skills-grid" ref={skillsRef}>
           {skills.map((skill, index) => (
             <div 
               key={skill.name} 
-              className="skill-card"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`skill-card ${visibleSkills.includes(index) ? 'visible' : ''}`}
             >
               <div className="skill-icon">{skill.icon}</div>
               <span className="skill-name">{skill.name}</span>
