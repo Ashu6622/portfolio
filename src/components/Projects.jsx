@@ -45,6 +45,16 @@ const Projects = () => {
     },
     {
       id: 5,
+      title: 'Buyer lead Intake Application with Nextjs',
+      description: `I developed a full-stack lead intake system using Next.js for both the frontend and backend. The application enables businesses to capture, manage, and distribute buyer leads seamlessly. Data is stored in a PostgreSQL database, with Prisma ORM handling schema design, migrations, and queries efficiently.
+
+      The platform is fully responsive and scalable, ensuring smooth access across devices and handling growing data volumes without performance issues. Hosted on Vercel, the deployment pipeline provides automatic builds, global CDN, and high availability. `,
+      github: 'https://github.com/Ashu6622/esahayak-Buyer-Lead-Intake',
+      live: 'https://esahayak-buyer-lead-intake.vercel.app/',
+      image: 'download.jpeg'
+    },
+    {
+      id: 6,
       title: 'RBAC with Nextjs',
       description: 'Implemented Role-Based Access Control (RBAC) in a Next.js application with MongoDB, enabling secure authentication and authorization for users and admins. Ensured protected routes and role-specific access for efficient user management.',
       github: 'https://github.com/Ashu6622/Nextjs_Admin_User_Panel',
