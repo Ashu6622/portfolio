@@ -85,7 +85,7 @@ const Contact = () => {
                 <span className="btn-icon">📄</span>
                 Download Resume
               </button>
-              <a href="https://drive.google.com/file/d/1ldMSm48QbMWLzbCrjV9BOMrZ--aA2OaY/view?usp=sharing" className="resume-btn view-resume-btn" target="_blank" rel="noopener noreferrer">
+              <a href="https://drive.google.com/file/d/1gbcSvmZSSyAc9SZnQk8z-2VQQxLgB-0s/view?usp=sharing" className="resume-btn view-resume-btn" target="_blank" rel="noopener noreferrer">
                 <span className="btn-icon">👁️</span>
                 View Resume
               </a>
